@@ -9,16 +9,12 @@ body {
 
 }
 
-
 h1, h2, h3, h4 {
     font-weight: bold;
 }
 
-
 h1 {
     border-bottom: 2px solid #BBBBBB;
-
-    text-align: center;
 }
 
 a {
@@ -89,16 +85,6 @@ div.project-title {
 
 }
 
-div.project-image {
-
-}
-div.project-image:hover {
-
-}
-
 .img-responsive {
     width: 100%;
 }
-
-
-
