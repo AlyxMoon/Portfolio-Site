@@ -60,6 +60,11 @@ a.anchor:before {
     padding-top: 0;
 }
 
+.contact {
+    text-align: left;
+    font-size: 20px;
+    padding: 20px 0;
+}
 
 div.project {
     background-color: #162524;
