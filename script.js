@@ -89,10 +89,6 @@ var portfolioData = {
 $(document).ready(function() {
     fillPortfolio(portfolioData);
 
-    $(".btn").mouseup(function(){
-        $(this).blur();
-    })
-
     $('.showElement').click(function(event) {
         $(this).toggleClass('collapseElement');
         $('#' + $(this).data('id')).toggle(100).removeClass('hide');
