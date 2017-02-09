@@ -76,12 +76,12 @@ var portfolioData = {
         {
             "title": "My Friend Catherine",
             "link": "https://twitter.com/CatherineXKCD",
-            "image": "https://pbs.twimg.com/profile_images/741173119042224130/iqVLnn69.jpg"
+            "image": "images/myfriendcatherine.jpg"
         },
         {
             "title": "Bible/Quran Quote Generator",
             "link": "https://twitter.com/SBS_QuranBible",
-            "image": "https://pbs.twimg.com/profile_images/827299729767665664/GgsUPvmW_400x400.jpg"
+            "image": "images/bible-quran.jpg"
         }
     ]
 };
