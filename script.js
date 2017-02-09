@@ -71,6 +71,18 @@ var portfolioData = {
             "image": "http://codepen.io/AlyxMoon/pen/kkEOXv/image/small.png"
         }
 
+    ],
+    "twitterbots": [
+        {
+            "title": "My Friend Catherine",
+            "link": "https://twitter.com/CatherineXKCD",
+            "image": "https://pbs.twimg.com/profile_images/741173119042224130/iqVLnn69.jpg"
+        },
+        {
+            "title": "Bible/Quran Quote Generator",
+            "link": "https://twitter.com/SBS_QuranBible",
+            "image": "https://pbs.twimg.com/profile_images/827299729767665664/GgsUPvmW_400x400.jpg"
+        }
     ]
 };
 
@@ -93,37 +105,39 @@ $(document).ready(function() {
 });
 
 function fillPortfolio(data) {
-    var fccPortfolio = $('#showcase-fcc');
 
-    for(var i = data.fcc.length - 1; i >= 0; i--) {
-        fccPortfolio.append(
-                $('<div />')
-                    .addClass('col-lg-3 col-md-4 col-sm-6 col-xsm-6 col-xs-12')
-                    .append(
-                        $('<div />')
-                            .addClass('project')
-                            .append(
-                                $('<a />')
-                                    .attr('target', '_blank')
-                                    .attr('href', data.fcc[i].link)
-                                    .append(
-                                        $('<div />')
-                                            .addClass('project-title')
-                                            .text(data.fcc[i].title)
-                                    )
-                            )
-                            .append(
-                                $('<div />')
-                                    .addClass('project-image')
-                                    .append(
-                                        $('<img />')
-                                            .addClass('img-responsive')
-                                            .attr('src', data.fcc[i].image)
-                                    )
-                            )
-                    )
-        );
-    }
+    Object.keys(data).forEach(function(key) {
+        for(var i = data[key].length - 1; i >= 0; i--) {
+            $('#showcase-' + key).append(
+                    $('<div />')
+                        .addClass('col-lg-3 col-md-4 col-sm-6 col-xsm-6 col-xs-12')
+                        .append(
+                            $('<div />')
+                                .addClass('project')
+                                .append(
+                                    $('<a />')
+                                        .attr('target', '_blank')
+                                        .attr('href', data[key][i].link)
+                                        .append(
+                                            $('<div />')
+                                                .addClass('project-title')
+                                                .text(data[key][i].title)
+                                        )
+                                )
+                                .append(
+                                    $('<div />')
+                                        .addClass('project-image')
+                                        .append(
+                                            $('<img />')
+                                                .addClass('img-responsive')
+                                                .attr('src', data[key][i].image)
+                                        )
+                                )
+                        )
+            );
+        }
+    });
+
 };
 
 var bonusString = ' \
