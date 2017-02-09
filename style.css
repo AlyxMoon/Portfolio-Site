@@ -1,3 +1,9 @@
+@media (max-width: 768px) and (min-width: 600px) {
+    .col-xsm-6 {
+        width: 50%;
+    }
+}
+
 body {
     background: url('images/background.png') no-repeat center center fixed;
     background-color: #3FB0AC;
