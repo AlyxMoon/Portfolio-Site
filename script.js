@@ -91,7 +91,7 @@ $(document).ready(function() {
 
     $('.showElement').click(function(event) {
         $(this).toggleClass('collapseElement');
-        $('#' + $(this).data('id')).toggle(100).removeClass('hide');
+        $('#' + $(this).data('id')).toggle(200).removeClass('hide');
         $('a').blur();
 
         event.preventDefault();

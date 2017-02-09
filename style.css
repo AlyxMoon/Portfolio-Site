@@ -1,9 +1,5 @@
-@media (max-width: 768px) and (min-width: 600px) {
-    .col-xsm-6 {
-        width: 50%;
-    }
-}
-
+/* Global
+-----------------------------------------------*/
 body {
     background: url('images/background.png') no-repeat center center fixed;
     background-color: #3FB0AC;
@@ -12,22 +8,6 @@ body {
     color: #BBBBBB;
     font-family: 'Istok Web', sans-serif;
     text-align: center;
-
-}
-
-h1, h2, h3, h4 {
-    font-weight: bold;
-}
-
-h1 {
-    border-bottom: 2px solid #BBBBBB;
-}
-
-a {
-    color: #3FB0AC;
-}
-a:hover {
-    color: #3FB0AC;
 }
 
 .jumbotron {
@@ -45,7 +25,7 @@ a:hover {
     padding: 20px 0;
 }
 
-div.project {
+.project {
     background-color: #162524;
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
@@ -56,11 +36,12 @@ div.project {
 
     transition-duration: 0.2s;
 }
-div.project:hover {
+
+.project:hover {
     box-shadow: 2px 5px;
 }
 
-div.project-title {
+.project-title {
     border-bottom: 1px solid #E9E9E9;
     padding: 10px;
 
@@ -71,6 +52,22 @@ div.project-title {
 
 .img-responsive {
     width: 100%;
+    height: 150px;
+}
+
+/* Structure
+-----------------------------------------------*/
+/* Custom column type because Bootstrap wasn't granular enough for my tastes */
+@media (max-width: 768px) and (min-width: 600px) {
+    .col-xsm-6 {
+        width: 50%;
+    }
+}
+
+/* Headings
+-----------------------------------------------*/
+h1 {
+    border-bottom: 2px solid #BBBBBB;
 }
 
 .showElement {
@@ -79,11 +76,18 @@ div.project-title {
 .showElement::before {
     content: '+ '
 }
-
 .collapseElement::before {
     content: '- '
 }
 
+/* Navigation
+-----------------------------------------------*/
+a, a:hover {
+    color: #3FB0AC;
+}
+
+/* Extras
+-----------------------------------------------*/
 .hide {
     display: none;
 }
