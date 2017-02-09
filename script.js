@@ -4,6 +4,15 @@ $(document).ready(function() {
         $(this).blur();
     })
 
+    $('.showElement').click(function(event) {
+        $(this).toggleClass('collapseElement');
+        $('#' + $(this).data('id')).toggle(100).removeClass('hide');
+        $('a').blur();
+
+        event.preventDefault();
+
+    });
+
 });
 var bonusString = ' \
 _________________ \n\
