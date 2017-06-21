@@ -1,76 +1,105 @@
 var portfolioData = {
     "fcc": [
-        {
-            "title" : "Personal Portfolio",
-            "link": "http://codepen.io/AlyxMoon/full/KdqRRr",
-            "image": "http://codepen.io/AlyxMoon/pen/KdqRRr/image/small.png"
-        },
-        {
-            "title" : "Pomodoro Clock",
-            "link": "http://codepen.io/AlyxMoon/full/OyqMwe",
-            "image": "http://codepen.io/AlyxMoon/pen/OyqMwe/image/small.png"
-        },
-        {
-            "title" : "Random Quotes",
-            "link": "http://codepen.io/AlyxMoon/full/gaEPjy",
-            "image": "http://codepen.io/AlyxMoon/pen/gaEPjy/image/small.png"
-        },
-        {
-            "title" : "Calculator",
-            "link": "http://codepen.io/AlyxMoon/full/GoKNYG",
-            "image": "http://codepen.io/AlyxMoon/pen/GoKNYG/image/small.png"
-        },
-        {
-            "title" : "Local Weather",
-            "link": "http://codepen.io/AlyxMoon/full/adBmag",
-            "image": "http://codepen.io/AlyxMoon/pen/adBmag/image/small.png"
-        },
-        {
-            "title" : "Stylized Camper News",
-            "link": "http://codepen.io/AlyxMoon/full/PZKxWb",
-            "image": "http://codepen.io/AlyxMoon/pen/PZKxWb/image/small.png"
-        },
-        {
-            "title" : "Wikipedia Viewer",
-            "link": "http://codepen.io/AlyxMoon/full/JGOPKy",
-            "image": "http://codepen.io/AlyxMoon/pen/JGOPKy/image/small.png"
-        },
-        {
-            "title" : "Twitch Streamers",
-            "link": "http://codepen.io/AlyxMoon/full/ZQRrNw",
-            "image": "http://codepen.io/AlyxMoon/pen/ZQRrNw/image/small.png"
-        },
-        {
-            "title" : "Tic Tac Toe",
-            "link": "http://codepen.io/AlyxMoon/full/zqjqVE",
-            "image": "http://codepen.io/AlyxMoon/pen/zqjqVE/image/small.png"
-        },
-        {
-            "title" : "Simon Game",
-            "link": "http://codepen.io/AlyxMoon/full/YqORyx",
-            "image": "http://codepen.io/AlyxMoon/pen/YqORyx/image/small.png"
-        },
-        {
-            "title" : "Recipe Box",
-            "link": "http://codepen.io/AlyxMoon/full/MbzeRy",
-            "image": "http://codepen.io/AlyxMoon/pen/MbzeRy/image/small.png"
-        },
-        {
-            "title" : "Markdown Previewer",
-            "link": "http://codepen.io/AlyxMoon/full/VmwYjb",
-            "image": "http://codepen.io/AlyxMoon/pen/VmwYjb/image/small.png"
-        },
-        {
-            "title" : "Free Code Camp Leaderboard",
-            "link": "http://codepen.io/AlyxMoon/full/MbqBre",
-            "image": "http://codepen.io/AlyxMoon/pen/MbqBre/image/small.png"
-        },
-        {
-            "title" : "Conway's Game of Life",
-            "link": "http://codepen.io/AlyxMoon/full/kkEOXv",
-            "image": "http://codepen.io/AlyxMoon/pen/kkEOXv/image/small.png"
-        }
-
+      {
+        "title" : "Random Quotes",
+        "link": "http://freecodecamp.allistermoon.com/quotes",
+        "image": "images/previews/quotes.png"
+      },
+      {
+        "title" : "Local Weather",
+        "link": "http://freecodecamp.allistermoon.com/weather",
+        "image": "images/previews/weather.png"
+      },
+      {
+        "title" : "Wikipedia Viewer",
+        "link": "http://freecodecamp.allistermoon.com/wikipedia",
+        "image": "images/previews/wikipedia.png"
+      },
+      {
+        "title" : "Twitch Streamers",
+        "link": "http://freecodecamp.allistermoon.com/twitch",
+        "image": "images/previews/twitch.png"
+      },
+      {
+        "title" : "Calculator",
+        "link": "http://freecodecamp.allistermoon.com/calculator",
+        "image": "images/previews/calculator.png"
+      },
+      {
+        "title" : "Pomodoro Clock",
+        "link": "http://freecodecamp.allistermoon.com/pomodoro",
+        "image": "images/previews/pomodoro.png"
+      },
+      {
+        "title" : "Tic Tac Toe",
+        "link": "http://freecodecamp.allistermoon.com/tictactoe",
+        "image": "images/previews/tictactoe.png"
+      },
+      {
+        "title" : "Simon Game",
+        "link": "http://freecodecamp.allistermoon.com/simon",
+        "image": "images/previews/simon.png"
+      },
+      {
+        "title" : "Markdown Previewer",
+        "link": "http://freecodecamp.allistermoon.com/markdown",
+        "image": "images/previews/markdown.png"
+      },
+      {
+        "title" : "Free Code Camp Leaderboard",
+        "link": "http://freecodecamp.allistermoon.com/leaderboard",
+        "image": "images/previews/leaderboard.png"
+      },
+      {
+        "title" : "Recipe Box",
+        "link": "http://freecodecamp.allistermoon.com/recipes",
+        "image": "images/previews/recipes.png"
+      },
+      {
+        "title" : "Conway's Game of Life",
+        "link": "http://freecodecamp.allistermoon.com/gameoflife",
+        "image": "images/previews/gameoflife.png"
+      },
+      {
+        "title": "Roguelike Dungeon Crawler",
+        "link": "http://freecodecamp.allistermoon.com/dungeoncrawler",
+        "image": "images/previews/dungeoncrawler.png"
+      },
+      {
+        title: 'D3 - Bar Graph',
+        link: 'http://freecodecamp.allistermoon.com/data-viz-bar',
+        image: 'images/previews/data-viz-bar.png'
+      },
+      {
+        title: 'D3 - Scatterplot',
+        link: 'http://freecodecamp.allistermoon.com/data-viz-scatterplot',
+        image: 'images/previews/data-viz-scatterplot.png'
+      },
+      {
+        title: 'D3 - Heat Map',
+        link: 'http://freecodecamp.allistermoon.com/data-viz-heatmap',
+        image: 'images/previews/data-viz-heatmap.png'
+      },
+      {
+        title: 'D3 - Force Directed Graph',
+        link: 'http://freecodecamp.allistermoon.com/data-viz-force',
+        image: 'images/previews/data-viz-force.png'
+      },
+      {
+        title: 'D3 - Meteorite Map',
+        link: 'http://freecodecamp.allistermoon.com/data-viz-map',
+        image: 'images/previews/data-viz-map.png'
+      },
+      {
+        title: 'API - Timestamp Microservice',
+        link: 'http://freecodecamp.allistermoon.com/api-timestamp',
+        image: 'images/previews/api-timestamp.png'
+      },
+      {
+        title: 'API - Request Header Parser',
+        link: 'http://freecodecamp.allistermoon.com/api-header',
+        image: 'images/previews/api-header.png'
+      }
     ],
     "twitterbots": [
         {
@@ -101,7 +130,6 @@ $(document).ready(function() {
 });
 
 function fillPortfolio(data) {
-
     Object.keys(data).forEach(function(key) {
         for(var i = data[key].length - 1; i >= 0; i--) {
             $('#showcase-' + key).append(
