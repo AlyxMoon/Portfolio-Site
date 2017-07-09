@@ -4,3 +4,10 @@ var app = new Vue({
     message: 'And hello from Vue!'
   }
 })
+
+var vuePortfolio = new Vue({
+  el: '#portfolio',
+  data: {
+    items: fccProjects.reverse()
+  }
+})
