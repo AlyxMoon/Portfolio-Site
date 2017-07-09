@@ -18,26 +18,33 @@
   <script src='https://unpkg.com/vue'></script>
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <div id='placeholder'>
-    {{ message }}
-  </div>
+  <main>
+    <header>
+      <div class='hero-container'>
+        <div class='hero-container-text'>
+          <h1>Allister Moon</h1>
+          <h2>Web developer, programmer, and more.</h2>
+        </div>
+      </div>
+    </header>
 
-  <section id='portfolio'>
-    <h1>Free Code Camp Projects</h1>
-    <div class='pure-g'>
-      <div class='pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4' v-for='item in items'>
-        <div class='card'>
-          <div class='card-image'>
-            <img :src='item.imageLink' class='pure-img' />
-          </div>
-          <div class='card-text'>
-            {{ item.name }}
+
+    <section id='portfolio'>
+      <h1>Free Code Camp Projects</h1>
+      <div class='pure-g'>
+        <div class='pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4' v-for='item in items'>
+          <div class='card'>
+            <div class='card-image'>
+              <img :src='item.imageLink' class='pure-img' />
+            </div>
+            <div class='card-text'>
+              {{ item.name }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <script src='js/fccProjects.js'></script>
   <script src='js/main.js'></script>
