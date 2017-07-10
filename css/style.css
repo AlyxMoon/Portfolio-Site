@@ -29,7 +29,8 @@ footer {
         margin: 0.5em auto; } }
 
 .pure-button {
-  border: 1px solid #E6E6E6; }
+  border: 1px solid #E6E6E6;
+  transition-duration: 0.2s; }
   .pure-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
     color: #E6E6E6;
