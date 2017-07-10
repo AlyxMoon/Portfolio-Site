@@ -3,9 +3,75 @@ $breakpoint-md: 48em;
 $breakpoint-lg: 64em;
 $breakpoint-xl: 80em;
 
+$primary-color: #3FB0AC;
+$secondary-color: #FFA45B;
+$back-color: #191E28;
+
+$text-color-light: #E6E6E6;
+$text-color-dark: black;
+
+#contact {
+  min-height: 20em;
+  background-color: $back-color;
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: $text-color-light;
+    text-shadow: 1px 1px 2px $text-color-dark;
+  }
+}
+
+footer {
+  background-color: black;
+  color: $text-color-light;
+  padding: 1em 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  @media (max-width: $breakpoint-sm) { flex-direction: column; }
+
+  padding-bottom: 1em;
+
+  .pure-button {
+    margin-right: 0.5em;
+    :last-child { margin-right: 0 }
+
+    @media (max-width: $breakpoint-sm) {
+      min-width: 50%;
+      margin: 0.5em auto;
+    }
+  }
+}
+
+.pure-button {
+  border: 1px solid $text-color-light;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: $text-color-light;
+    border: 1px solid $text-color-light;
+  }
+}
+
+
+.section-header {
+  padding-top: 0.5em;
+  text-align: center;
+  font-size: 4em;
+}
+
 .pure-g {
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.button-large {
+  font-size: 110%;
+  font-weight: bold;
 }
 
 .card {
@@ -45,7 +111,7 @@ $breakpoint-xl: 80em;
 }
 
 .hero-container-text {
-  color: white;
+  color: $text-color-light;
   text-shadow: 1px 1px 2px black;
 
   h1 {

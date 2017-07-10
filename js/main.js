@@ -4,3 +4,10 @@ var vuePortfolio = new Vue({
     items: fccProjects.reverse()
   }
 })
+
+var vueYear = new Vue({
+  el: '.trademark',
+  data: {
+    year: (new Date()).getFullYear()
+  }
+})

@@ -13,6 +13,7 @@
 
   <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/pure-min.css' integrity='sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w' crossorigin='anonymous'>
   <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/178807a833.css">
   <link rel='stylesheet' href='css/style.css'>
   <!-- Break the rules and load Vue first, else there's a brief moment where data isn't filled in on page load -->
   <script src='https://unpkg.com/vue'></script>
@@ -44,7 +45,32 @@
         </div>
       </div>
     </section>
+
+    <section id='contact'>
+      <h1 class='section-header'>Get in touch</h1>
+      <div class='contact-links'>
+        <a href='mailto:allisterkmoon@gmail.com' class='pure-button button-large'>
+          <i class='fa fa-envelope-open' aria-hidden='true'></i>
+          Email
+        </a>
+        <a href='https://github.com/AlyxMoon' class='pure-button button-large'>
+          <i class="fa fa-github" aria-hidden="true"></i>
+          Github
+        </a>
+        <a href='https://www.linkedin.com/in/allistermoon' class='pure-button button-large'>
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+        <a href='https://twitter.com/AlyxDeLunar' class='pure-button button-large'>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          Twitter
+        </a>
+      </div>
+    </section>
   </main>
+  <footer>
+    <span class='trademark'>&copy; {{ year }} Allister Moon</span>
+  </footer>
 
   <script src='js/fccProjects.js'></script>
   <script src='js/main.js'></script>
