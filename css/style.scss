@@ -15,15 +15,6 @@ body {
   text-align: center;
 }
 
-#portfolio {
-  .section-header {
-    margin-bottom: 0.5em;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-bottom: 2px solid $back-color;
-  }
-}
-
 #contact {
   min-height: 20em;
   background-color: $back-color;
@@ -41,6 +32,13 @@ body {
 
 main {
   background-color: #ECECEA;
+
+  .section-header {
+    margin-bottom: 0.5em;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-bottom: 2px solid $back-color;
+  }
 }
 
 footer {

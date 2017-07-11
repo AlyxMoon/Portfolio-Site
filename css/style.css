@@ -1,12 +1,6 @@
 body {
   text-align: center; }
 
-#portfolio .section-header {
-  margin-bottom: 0.5em;
-  margin-left: 2%;
-  margin-right: 2%;
-  border-bottom: 2px solid #191E28; }
-
 #contact {
   min-height: 20em;
   background-color: #191E28; }
@@ -20,6 +14,11 @@ body {
 
 main {
   background-color: #ECECEA; }
+  main .section-header {
+    margin-bottom: 0.5em;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-bottom: 2px solid #191E28; }
 
 footer {
   background-color: black;
