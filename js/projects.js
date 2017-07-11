@@ -1,3 +1,24 @@
+var clientProjects = [
+  {
+    name: 'Exoplanetary Media',
+    link: 'http://exoplanetarymedia.com/',
+    imageLink: 'img/previews/clients/exoplanetary.png',
+    description: 'A WordPress powered site, I maintain this site for this PDX local podcaster.'
+  },
+  {
+    name: 'Anna Spangler Massage Therapy',
+    link: 'https://www.theannasparkles.com/',
+    imageLink: 'img/previews/clients/annaspangler.png',
+    description: 'I set up and configured the theme on this Squarespace powered site for a PDX local massage therapist, in addition to adding custom code. The aim was simplicity and ease of use.'
+  },
+  {
+    name: 'StayinPDX',
+    link: 'https://stayinpdx.com/',
+    imageLink: 'img/previews/clients/stayinpdx.png',
+    description: 'For this PDX meal kity delivery company, I customized the theme on their Shopify powered site to give them the front page look they needed.'
+  }
+]
+
 var fccProjects = [
   {
     name: 'Random Quotes',

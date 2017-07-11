@@ -30,19 +30,59 @@
 
   <main>
     <section id='portfolio'>
-      <h1>Free Code Camp Projects</h1>
-      <div class='pure-g'>
-        <div class='pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4' v-for='item in items'>
-          <div class='card'>
-            <div class='card-image'>
-              <img :src='item.imageLink' class='pure-img' />
-            </div>
-            <div class='card-text'>
-              {{ item.name }}
-            </div>
+      <section class='portfolio-section'>
+        <h1 class='section-header'>Client Projects</h1>
+
+        <div class='pure-g'>
+          <div class='pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4' v-for='project in clientProjects'>
+            <a class='card-link' :href='project.link' target='_blank'>
+              <div class='card'>
+                <div class='card-image'>
+                  <img :src='project.imageLink' class='pure-img' />
+                </div>
+                <div class='card-text'>
+                  <div class='card-title'>
+                    <h2>{{ project.name }}</h2>
+                  </div>
+                  <div class='card-description'>
+                    {{ project.description }}
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
+
+        <h2>Interested in becoming a client?</h2>
+        <a href='mailto:allisterkmoon@gmail.com' class='pure-button pure-button-dark button-large'>
+          <i class='fa fa-envelope-open' aria-hidden='true'></i>
+          Send me an email
+        </a>
+      </section>
+
+      <section class='portfolio-section'>
+        <h1 class='section-header'>Free Code Camp Projects</h1>
+        <p>
+          <a href='https://www.freecodecamp.org' target='_blank'>Free Code Camp</a> is an open-source full-stack web development course, focusing on a Read-Search-Ask methodology. In other words, 'here is something to make, go figure out how to make it!'.
+        </p>
+
+        <div class='pure-g'>
+          <div class='pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4' v-for='project in fccProjects'>
+            <a class='card-link' :href='project.link' target='_blank'>
+              <div class='card'>
+                <div class='card-image'>
+                  <img :src='project.imageLink' class='pure-img' />
+                </div>
+                <div class='card-title'>
+                  <h2>{{ project.name }}</h2>
+                </div>
+                <div class='card-description'>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id='contact'>
@@ -72,7 +112,7 @@
     <span class='trademark'>&copy; {{ year }} Allister Moon</span>
   </footer>
 
-  <script src='js/fccProjects.js'></script>
+  <script src='js/projects.js'></script>
   <script src='js/main.js'></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

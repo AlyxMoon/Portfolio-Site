@@ -1,9 +1,25 @@
+body {
+  text-align: center; }
+
+#portfolio .section-header {
+  margin-bottom: 0.5em;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-bottom: 2px solid #191E28; }
+
 #contact {
   min-height: 20em;
   background-color: #191E28; }
   #contact h1, #contact h2, #contact h3, #contact h4, #contact h5, #contact h6, #contact p {
     color: #E6E6E6;
     text-shadow: 1px 1px 2px black; }
+
+.card-link {
+  text-decoration: none;
+  color: black; }
+
+main {
+  background-color: #ECECEA; }
 
 footer {
   background-color: black;
@@ -36,30 +52,63 @@ footer {
     color: #3FB0AC;
     border: 1px solid #3FB0AC; }
 
+.pure-button-dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #3FB0AC;
+  border: 1px solid rgba(0, 0, 0, 0.8); }
+  .pure-button-dark:hover {
+    border: 1px solid #E6E6E6;
+    background-color: #3FB0AC;
+    color: black; }
+
 .section-header {
-  padding-top: 0.5em;
-  text-align: center;
+  margin-top: 0;
+  padding-top: 0.67em;
   font-size: 4em; }
 
-.pure-g {
-  margin-left: 1em;
-  margin-right: 1em; }
+@media (min-width: 48em) {
+  .pure-g {
+    margin-left: 1em;
+    margin-right: 1em; } }
 
 .button-large {
   font-size: 110%;
   font-weight: bold; }
 
 .card {
-  margin: 0.5em;
-  height: 20em;
-  border: 1px solid black; }
+  background-color: #191E28;
+  color: #E6E6E6;
+  height: 25em;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: row-reverse; }
+  @media (max-width: 35.5em) {
+    .card {
+      flex-direction: column; } }
+  @media (min-width: 48em) {
+    .card {
+      border-radius: 4px;
+      flex-direction: column;
+      margin: 0.5em; } }
 
 .card-image {
-  height: 80%; }
+  height: 100%;
+  width: 50%; }
+  @media (max-width: 35.5em), (min-width: 48em) {
+    .card-image {
+      width: 100%;
+      height: 50%;
+      padding-bottom: 4%;
+      border-bottom: 1px solid #3FB0AC; } }
 
 .card-text {
-  height: 20%;
-  text-align: center; }
+  height: 100%;
+  width: 48%; }
+  @media (max-width: 35.5em), (min-width: 48em) {
+    .card-text {
+      width: 100%;
+      height: 50%; } }
 
 .card-image img {
   width: 100%;
@@ -73,7 +122,6 @@ footer {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -97,5 +145,8 @@ footer {
     @media (max-width: 35.5em) {
       .hero-container-text h2 {
         font-size: 1.5em; } }
+
+.portfolio-section {
+  margin-bottom: 3em; }
 
 /*# sourceMappingURL=style.css.map */
