@@ -71,6 +71,10 @@ code {
   }
 }
 
+#contact {
+  color: $text-color-light;
+}
+
 .button-large {
   font-size: 110%;
   font-weight: bold;
@@ -140,7 +144,6 @@ main {
 #contact {
   min-height: 20em;
   background-color: $back-color;
-
 }
 
 .section-header {
