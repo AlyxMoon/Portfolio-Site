@@ -224,11 +224,13 @@ main {
 
 .card-text {
   height: 100%;
-  width: 48%;
+  width: 50%;
+  padding: 0 0.5em 0 0;
 
   @media (max-width: $breakpoint-sm), (min-width: $breakpoint-md) {
     width: 100%;
     height: 50%;
+    padding: 0;
   }
 }
 
