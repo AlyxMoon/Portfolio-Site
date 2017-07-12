@@ -1,6 +1,15 @@
 body {
   text-align: center; }
 
+p {
+  font-size: 18px; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center; }
+
+#about {
+  text-align: left; }
+
 #contact {
   min-height: 20em;
   background-color: #191E28; }
@@ -13,7 +22,9 @@ body {
   color: black; }
 
 main {
-  background-color: #ECECEA; }
+  background-color: #ECECEA;
+  background-image: url("../img/background.png");
+  background-repeat: repeat; }
   main .section-header {
     margin-bottom: 0.5em;
     margin-left: 2%;
@@ -147,5 +158,10 @@ footer {
 
 .portfolio-section {
   margin-bottom: 3em; }
+
+code {
+  background-color: #191E28;
+  color: #FFA45B;
+  padding: 0 0.3em; }
 
 /*# sourceMappingURL=style.css.map */
