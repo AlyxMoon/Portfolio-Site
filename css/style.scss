@@ -44,7 +44,7 @@ main {
 // CH04 - Header & Navigation
 //-----------------------------------------------
 .hero-wrapper {
-  color: #EEE;
+  color: $text-color-light;
 
   height: 400px;
   width: 97%;
@@ -150,12 +150,44 @@ main {
 // CH06 - Footer
 //-----------------------------------------------
 footer {
-  background-color: black;
+  background-color: #111;
   color: $text-color-light;
   padding: 1em 0;
 
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+
+  .social-wrapper {
+    display: flex;
+
+    a {
+      height: 40px;
+      width: 40px;
+      margin: 5px 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #111;
+      text-decoration: none;
+      font-size: 1.3em;
+
+      border-radius: 50%;
+      background-color: #444;
+
+      user-select: none;
+      transition-property: background-color, color;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $primary-color;
+        background-color: #222;
+      }
+    }
+  }
 }
 
 // CH07 - Miscellaneous
@@ -253,4 +285,9 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+.logo-upwork {
+  font-family: sans-serif;
+  font-weight: bold;
 }
