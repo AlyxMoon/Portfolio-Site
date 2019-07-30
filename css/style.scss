@@ -16,6 +16,7 @@ $breakpoint-md: 48em;
 $breakpoint-lg: 64em;
 $breakpoint-xl: 80em;
 
+$space-color: #01304A;
 $primary-color: #3FB0AC;
 $secondary-color: #FFA45B;
 $back-color: #191E28;
@@ -29,6 +30,10 @@ $text-color-dark: black;
 
 // CH02 - Typography
 //-----------------------------------------------
+body {
+  font-family: 'Alegreya', serif;
+}
+
 
 // CH03 - Page Structure
 //-----------------------------------------------
@@ -38,6 +43,106 @@ main {
 
 // CH04 - Header & Navigation
 //-----------------------------------------------
+.hero-wrapper {
+  color: #EEE;
+
+  height: 400px;
+  width: 97%;
+  overflow: hidden;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  padding-left: 3%;
+
+  background: url('../img/moon_blue (Robert Karkowski, Pixabay).png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .hero-text {
+    min-width: 30%;
+    margin-top: -7rem;
+
+    text-shadow: 1px 1px $space-color;
+
+    .text-header {
+      border-bottom: 1px solid white;
+      margin-bottom: 0;
+      padding-left: 10px;
+
+      font-size: 3em;
+    }
+
+    .text-sub {
+      margin-top: 10px;
+      padding-left: 20px;
+
+      font-size: 1.5em;
+    }
+  }
+
+  .img-attribution {
+    position: absolute;
+    font-size: 10px;
+    right: 10px;
+    bottom: 5px;
+    text-align: right;
+
+    a {
+      color: $primary-color;
+    }
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 225, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+                0 0 20px rgba(0, 225, 255, 0.8),
+                0 0 40px rgba(0, 225, 255, 0.7),
+                0 0 80px rgba(0, 225, 255, 0.6);
+
+    height: 7px;
+    width: 7px;
+    opacity: 0;
+
+    animation: twinkle 5s ease-in-out infinite alternate;
+
+    &:nth-of-type(1) {
+      left: 5%;
+      top: 11%;
+      animation-delay: 0s;
+    }
+    &:nth-of-type(2) {
+      left: 14%;
+      top: 5%;
+      animation-delay: 1s;
+    }
+    &:nth-of-type(3) {
+      left: 17%;
+      top: 60%;
+      animation-delay: 2s;
+    }
+    &:nth-of-type(4) {
+      left: 25%;
+      top: 70%;
+      animation-delay: 3s;
+    }
+    &:nth-of-type(5) {
+      left: 43%;
+      top: 92%;
+      animation-delay: 4s;
+    }
+    &:nth-of-type(6) {
+      left: 90%;
+      top: 68%;
+      animation-delay: 5s;
+    }
+
+  }
+}
 
 // CH05 - Content and Media
 //-----------------------------------------------
@@ -138,5 +243,14 @@ footer {
 @keyframes rotate {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
