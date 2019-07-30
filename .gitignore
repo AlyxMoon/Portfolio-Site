@@ -2,6 +2,9 @@
 .*
 ~*
 
+# ignore generated .css files
+css/*.css
+
 # ignore unnecessary sass map file
 *.map
 
