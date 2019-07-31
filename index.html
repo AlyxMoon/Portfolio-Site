@@ -12,6 +12,7 @@
   <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png'>
 
   <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/pure-min.css' integrity='sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w' crossorigin='anonymous'>
   <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css'>
@@ -36,7 +37,7 @@
         <span class="star"></span>
         <span class="star"></span>
       </div>
-      <div class="circle-wrapper">
+      <!-- <div class="circle-wrapper">
         <div class="circle-main"></div>
         <div class="ring ring-1">
           <div class="circle-sub s-1"></div>
@@ -47,6 +48,55 @@
           <div class="circle-sub s-2"></div>
           <div class="circle-sub s-3"></div>
           <div class="circle-sub s-4"></div>
+        </div>
+      </div> -->
+      <div class="content">
+        <div class="about-me-wrapper">
+          <div class="portrait">
+            <img class="img-responsive" src="./img/selfie.png" />
+          </div>
+          <div class="about-me-text">
+            <h3>Hello there! My name is <span class="highlight">Allister Moon</span>.</h3>
+            <p>
+              I'm a simple and relaxed guy; I pride myself on being straightforward and pleasant to work with.
+            </p>
+            <p>I like to write software, build websites, and make money. And so I offer my freelancing services to you. But what do I do, you ask? </p>
+
+            <div class="skills-wrapper">
+              <transition name="slide-fade">
+                <button class="btn" @click="showSkills = true" v-if="showSkills === false">Yeah, what do you do?</button>
+              </transition>
+
+              <transition name="slide-fade">
+                <dl v-if="showSkills === true">
+                  <dt>The web essentials:</dt>
+                  <dd>
+                    <template v-for="(skill, index) in skills.web">
+                      <span class="skill">{{ skill }}</span><span v-if='index < skills.web.length - 1'>, </span>
+                    </template>
+                  </dd>
+                  <dt>Frontend libraries and frameworks:</dt>
+                  <dd>
+                    <template v-for="(skill, index) in skills.frontend">
+                      <span class="skill">{{ skill }}</span><span v-if='index < skills.frontend.length - 1'>, </span>
+                    </template>
+                  </dd>
+                  <dt>Backend libraries and frameworks:</dt>
+                  <dd>
+                    <template v-for="(skill, index) in skills.backend">
+                      <span class="skill">{{ skill }}</span><span v-if='index < skills.backend.length - 1'>, </span>
+                    </template>
+                  </dd>
+                  <dt>Other fun stuff:</dt>
+                  <dd>
+                    <template v-for="(skill, index) in skills.other">
+                      <span class="skill">{{ skill }}</span><span v-if='index < skills.other.length - 1'>, </span>
+                    </template>
+                  </dd>
+                </dl>
+              </transition>
+            </div>
+          </div>
         </div>
       </div>
     </main>

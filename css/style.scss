@@ -32,6 +32,7 @@ $text-color-dark: black;
 //-----------------------------------------------
 body {
   font-family: 'Alegreya', serif;
+  color: $text-color-light;
 }
 
 
@@ -41,11 +42,65 @@ main {
   min-height: 800px;
 }
 
+.content {
+  background-color: #111;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  // background-image: linear-gradient(40deg, $secondary-color 70%, $space-color 50%);
+
+  padding: 20px 5%;
+  width: 90%;
+}
+
+.about-me-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .about-me-text {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  font-size: 20px;
+
+  dl {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+
+    dt {
+      font-weight: bold;
+      text-align: right;
+    }
+    dd {
+      font-family: 'Press Start 2P', 'Alegreya', serif;
+      font-size: 1.3em;
+      line-height: 1.3em;
+
+      .skill:hover {
+        animation: neon 1.5s ease-in-out infinite alternate;
+        cursor: pointer;
+      }
+    }
+  }
+
+  p {
+    // font-size:
+  }
+}
+
 // CH04 - Header & Navigation
 //-----------------------------------------------
 .hero-wrapper {
-  color: $text-color-light;
-
   height: 400px;
   width: 97%;
   overflow: hidden;
@@ -146,12 +201,58 @@ main {
 
 // CH05 - Content and Media
 //-----------------------------------------------
+.portrait {
+  width: 300px;
+  height: 510px;
+  overflow: hidden;
+
+  border-radius: 10px;
+  border: 2px solid #DDD;
+  box-shadow: 2px 2px 5px 3px #333;
+
+  background-color: #EEE;
+
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.img-responsive {
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+
+  height: 40px;
+  min-width: 50px;
+  margin: 5px 5px;
+
+  text-decoration: none;
+  font-size: 1.3em;
+
+  border-radius: 10px;
+  background-color: #444;
+
+  user-select: none;
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $primary-color;
+    background-color: #222;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
 
 // CH06 - Footer
 //-----------------------------------------------
 footer {
   background-color: #111;
-  color: $text-color-light;
   padding: 1em 0;
 
   display: flex;
@@ -287,7 +388,58 @@ footer {
   }
 }
 
+@keyframes neon {
+  from {
+    text-shadow:  0 0 1px #fff,
+                  0 0 2px #fff,
+                  0 0 3px #fff,
+                  0 0 4px $primary-color,
+                  0 0 7px $primary-color,
+                  0 0 8px $primary-color,
+                  0 0 10px $primary-color,
+                  0 0 15px $primary-color;
+  }
+  to {
+    text-shadow:  0 0 0.5px #fff,
+                  0 0 1px #fff,
+                  0 0 1.5px #fff,
+                  0 0 2px $primary-color,
+                  0 0 3px $primary-color,
+                  0 0 4px $primary-color,
+                  0 0 5px $primary-color,
+                  0 0 7px $primary-color;
+  }
+}
+
 .logo-upwork {
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.highlight {
+  color: $primary-color;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.5s linear;
+}
+.slide-fade-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.slide-fade-enter-active {
+  transition: all 2s ease-out;
+}
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateX(2000px);
+}
+.slide-fade-enter-to {
+  opacity: 1;
+  transform: translateX(0);
 }
