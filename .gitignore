@@ -1,9 +1,9 @@
 # ignore all files starting with . or ~
-.*
 ~*
 
-# ignore generated .css files
+# ignore generated .css files and sass cache data
 css/*.css
+css/.sass-cache
 
 # ignore unnecessary sass map file
 *.map
