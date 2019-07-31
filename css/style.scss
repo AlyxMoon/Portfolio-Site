@@ -16,6 +16,7 @@ $breakpoint-md: 48em;
 $breakpoint-lg: 64em;
 $breakpoint-xl: 80em;
 
+$space-color: #01304A;
 $primary-color: #3FB0AC;
 $secondary-color: #FFA45B;
 $back-color: #191E28;
@@ -26,227 +27,333 @@ $text-color-dark: black;
 
 // CH01 - Resets
 //-----------------------------------------------
-.pure-g {
-  @media (min-width: $breakpoint-md) {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-}
-
-.pure-button {
-  border: 1px solid $text-color-light;
-  transition-duration: 0.2s;
-
-  &:hover {
-    background-color: $back-color-secondary;
-    color: $primary-color;
-    border: 1px solid $primary-color;
-  }
-}
 
 // CH02 - Typography
 //-----------------------------------------------
-body, h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-}
-
-p {
-  font-size: 18px;
-}
-
-code {
-  background-color: $back-color;
-  color: $secondary-color;
-  padding: 0 0.3em;
-}
-
-#about {
-  text-align: left;
-}
-
-#content {
-  h1, h2, h3, h4, h5, h6, p {
-    color: $text-color-light;
-    text-shadow: 1px 1px 2px $text-color-dark;
-  }
-}
-
-#contact {
+body {
+  font-family: 'Alegreya', serif;
   color: $text-color-light;
 }
 
-.button-large {
-  font-size: 110%;
-  font-weight: bold;
-}
-
-.section-header {
-  font-size: 4em;
-}
-
-.hero-container-text {
-  color: $text-color-light;
-  text-shadow: 1px 1px 2px black;
-
-  h1 {
-    font-size: 6em;
-    @media (max-width: $breakpoint-md) { font-size: 4em; }
-    @media (max-width: $breakpoint-sm) { font-size: 3em; }
-  }
-
-  h2 {
-    font-size: 3em;
-    @media (max-width: $breakpoint-md) { font-size: 2em; }
-    @media (max-width: $breakpoint-sm) { font-size: 1.5em; }
-  }
-}
-
-.card-link {
-  text-decoration: none;
-  color: $text-color-dark;
-}
 
 // CH03 - Page Structure
 //-----------------------------------------------
-
-// CH04 - Header & Navigation
-//-----------------------------------------------
-.hero-container {
-  width: 100%;
-  height: 35em;
-
-  background-color: $back-color;
-  background-image: url('../img/hero-image.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+main {
+  min-height: 800px;
 }
 
-// CH05 - Content and Media
-//-----------------------------------------------
-main {
-  background-color: #ECECEA;
-  background-image: url('../img/background.png');
-  background-repeat: repeat;
+.content {
+  background-color: #111;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
 
-  .section-header {
-    margin-bottom: 0.5em;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-bottom: 2px solid $back-color;
+  padding: 20px 5%;
+  width: 90%;
+}
+
+.about-me-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .about-me-text {
+    padding-left: 20px;
+    padding-top: 20px;
   }
 }
 
-#contact {
-  min-height: 20em;
-  background-color: $back-color;
-}
-
-.section-header {
-  margin-top: 0;
-  padding-top: 0.67em;
-}
-
-.portfolio-section {
-  margin-bottom: 3em;
-}
-
-.contact-links {
+.skills-wrapper {
   display: flex;
-  justify-content: center;
-  @media (max-width: $breakpoint-sm) { flex-direction: column; }
+  flex-direction: row;
 
-  padding-bottom: 1em;
+  font-size: 20px;
 
-  .pure-button {
-    margin-right: 0.5em;
-    :last-child { margin-right: 0 }
+  dl {
 
-    @media (max-width: $breakpoint-sm) {
-      min-width: 50%;
-      margin: 0.5em auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+
+    dt {
+      font-weight: bold;
+      text-align: right;
+    }
+    dd {
+      font-family: 'Press Start 2P', 'Alegreya', serif;
+      font-size: 1.3em;
+      line-height: 1.3em;
+
+      .skill:hover {
+        animation: neon 1.5s ease-in-out infinite alternate;
+        cursor: pointer;
+      }
     }
   }
 }
 
-.pure-button-dark {
-  background-color: $back-color-secondary;
-  color: $primary-color;
-  border: 1px solid $back-color-secondary;
+// CH04 - Header & Navigation
+//-----------------------------------------------
+.hero-wrapper {
+  height: 400px;
+  width: 97%;
+  overflow: hidden;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  padding-left: 3%;
+
+  background: url('../img/moon_blue (Robert Karkowski, Pixabay).png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .hero-text {
+    min-width: 30%;
+    margin-top: -7rem;
+
+    text-shadow: 1px 1px $space-color;
+
+    .text-header {
+      border-bottom: 1px solid white;
+      margin-bottom: 0;
+      padding-left: 10px;
+
+      font-size: 3em;
+    }
+
+    .text-sub {
+      margin-top: 10px;
+      padding-left: 20px;
+
+      font-size: 1.5em;
+    }
+  }
+
+  .img-attribution {
+    position: absolute;
+    font-size: 10px;
+    right: 10px;
+    bottom: 5px;
+    text-align: right;
+
+    a {
+      color: $primary-color;
+    }
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 225, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+                0 0 20px rgba(0, 225, 255, 0.8),
+                0 0 40px rgba(0, 225, 255, 0.7),
+                0 0 80px rgba(0, 225, 255, 0.6);
+
+    height: 7px;
+    width: 7px;
+    opacity: 0;
+
+    animation: twinkle 5s ease-in-out infinite alternate;
+
+    &:nth-of-type(1) {
+      left: 5%;
+      top: 11%;
+      animation-delay: 0s;
+    }
+    &:nth-of-type(2) {
+      left: 14%;
+      top: 5%;
+      animation-delay: 1s;
+    }
+    &:nth-of-type(3) {
+      left: 17%;
+      top: 60%;
+      animation-delay: 2s;
+    }
+    &:nth-of-type(4) {
+      left: 25%;
+      top: 70%;
+      animation-delay: 3s;
+    }
+    &:nth-of-type(5) {
+      left: 43%;
+      top: 92%;
+      animation-delay: 4s;
+    }
+    &:nth-of-type(6) {
+      left: 90%;
+      top: 68%;
+      animation-delay: 5s;
+    }
+
+  }
+}
+
+// CH05 - Content and Media
+//-----------------------------------------------
+.portrait {
+  width: 300px;
+  height: 510px;
+  overflow: hidden;
+
+  border-radius: 10px;
+  border: 2px solid #DDD;
+  box-shadow: 2px 2px 5px 3px #333;
+
+  background-color: #EEE;
+
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.img-responsive {
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+
+  height: 40px;
+  min-width: 50px;
+  margin: 5px 5px;
+
+  text-decoration: none;
+  font-size: 1.3em;
+
+  border-radius: 10px;
+  background-color: #444;
+
+  user-select: none;
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  flex-shrink: 0;
 
   &:hover {
-    border: 1px solid $text-color-light;
-    background-color: $primary-color;
-    color: $text-color-dark;
-  }
-}
-
-.card {
-  background-color: $back-color;
-  color: $text-color-light;
-  height: 28em;
-  padding: 0.5em;
-
-  margin: 0.5em 0;
-
-  display: flex;
-  flex-direction: row-reverse;
-
-  @media (max-width: $breakpoint-sm) {
-    flex-direction: column;
-  }
-  @media (min-width: $breakpoint-md) {
-    border-radius: 4px;
-    flex-direction: column;
-    margin: 0.5em;
+    color: $primary-color;
+    background-color: #222;
   }
 
-}
-
-.card-image {
-  height: 100%;
-  width: 50%;
-
-  @media (max-width: $breakpoint-sm), (min-width: $breakpoint-md) {
-    width: 100%;
-    height: 50%;
-
-    padding-bottom: 4%;
-    border-bottom: 1px solid $primary-color;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.card-text {
-  height: 100%;
-  width: 50%;
-  padding: 0 0.5em 0 0;
-
-  @media (max-width: $breakpoint-sm), (min-width: $breakpoint-md) {
-    width: 100%;
-    height: 50%;
-    padding: 0;
+  &:focus {
+    outline: none;
   }
 }
 
 // CH06 - Footer
 //-----------------------------------------------
 footer {
-  background-color: black;
-  color: $text-color-light;
+  background-color: #111;
   padding: 1em 0;
 
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+
+  p {
+    margin: 0;
+  }
+
+  .social-wrapper {
+    display: flex;
+
+    a {
+      height: 40px;
+      width: 40px;
+      margin: 5px 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #111;
+      text-decoration: none;
+      font-size: 1.3em;
+
+      border-radius: 50%;
+      background-color: #444;
+
+      user-select: none;
+      transition-property: background-color, color;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $primary-color;
+        background-color: #222;
+      }
+    }
+  }
 }
 
 // CH07 - Miscellaneous
 //-----------------------------------------------
+
+@keyframes twinkle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow:  0 0 1px #fff,
+                  0 0 2px #fff,
+                  0 0 3px #fff,
+                  0 0 4px $primary-color,
+                  0 0 7px $primary-color,
+                  0 0 8px $primary-color,
+                  0 0 10px $primary-color,
+                  0 0 15px $primary-color;
+  }
+  to {
+    text-shadow:  0 0 0.5px #fff,
+                  0 0 1px #fff,
+                  0 0 1.5px #fff,
+                  0 0 2px $primary-color,
+                  0 0 3px $primary-color,
+                  0 0 4px $primary-color,
+                  0 0 5px $primary-color,
+                  0 0 7px $primary-color;
+  }
+}
+
+.logo-upwork {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.highlight {
+  color: $primary-color;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.5s linear;
+}
+.slide-fade-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.slide-fade-enter-active {
+  transition: all 2s ease-out;
+}
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateX(2000px);
+}
+.slide-fade-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
