@@ -1,1 +1,1 @@
-sass ./css/style.scss ./css/style.css --no-cache
+sass ./css/style.scss ./css/style.css
