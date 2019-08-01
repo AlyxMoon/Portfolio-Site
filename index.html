@@ -59,25 +59,29 @@
                   <dt>The web essentials:</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.web">
-                      <span class="skill">{{ skill }}</span><span v-if='index < skills.web.length - 1'>, </span>
+                      <span :class="['skill', { neon: (activeSkill[0] === 0 && activeSkill[1] === index) }]">{{ skill }}</span>
+                      <span v-if='index < skills.web.length - 1'>, </span>
                     </template>
                   </dd>
                   <dt>Frontend libraries and frameworks:</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.frontend">
-                      <span class="skill">{{ skill }}</span><span v-if='index < skills.frontend.length - 1'>, </span>
+                      <span :class="['skill', { neon: (activeSkill[0] === 1 && activeSkill[1] === index) }]">{{ skill }}</span>
+                      <span v-if='index < skills.frontend.length - 1'>, </span>
                     </template>
                   </dd>
                   <dt>Backend libraries and frameworks:</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.backend">
-                      <span class="skill">{{ skill }}</span><span v-if='index < skills.backend.length - 1'>, </span>
+                      <span :class="['skill', { neon: (activeSkill[0] === 2 && activeSkill[1] === index) }]">{{ skill }}</span>
+                      <span v-if='index < skills.backend.length - 1'>, </span>
                     </template>
                   </dd>
                   <dt>Other fun stuff:</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.other">
-                      <span class="skill">{{ skill }}</span><span v-if='index < skills.other.length - 1'>, </span>
+                      <span :class="['skill', { neon: (activeSkill[0] === 3 && activeSkill[1] === index) }]">{{ skill }}</span>
+                      <span v-if='index < skills.other.length - 1'>, </span>
                     </template>
                   </dd>
                 </dl>

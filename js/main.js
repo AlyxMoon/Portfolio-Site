@@ -1,3 +1,4 @@
+var skillCategories = ['web', 'frontend', 'backend', 'other']
 var skills = {
   'web': ['HTML', 'CSS', 'CSS Animations', 'JavaScript'],
   'frontend': ['JQuery', 'Bootstrap', 'Vue', 'React', 'Angular'],
@@ -10,7 +11,21 @@ var app = new Vue({
   data: {
     year: (new Date()).getFullYear(),
     skills,
-    showSkills: false
+    activeSkill: [-1, -1],
+    showSkills: false,
+    timer: null
+  },
+  created() {
+    this.timer = window.setInterval(() => {
+      this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
+      this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
+
+      console.log(this.activeSkill)
+    }, 3000)
+  },
+
+  beforeDestroy() {
+    clearInterval(this.timer)
   }
 })
 

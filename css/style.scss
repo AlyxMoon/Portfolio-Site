@@ -55,6 +55,10 @@ main {
   display: flex;
   flex-direction: row;
 
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
   .about-me-text {
     padding-left: 20px;
     padding-top: 20px;
@@ -67,27 +71,43 @@ main {
 
   font-size: 20px;
 
+  max-width: 100%;
+  overflow: hidden;
+
   dl {
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 
     grid-column-gap: 5px;
     grid-row-gap: 10px;
 
+    @media (max-width: 610px) {
+      grid-template-columns: 1fr;
+    }
+
     dt {
       font-weight: bold;
       text-align: right;
+      text-decoration: underline;
+
+      @media (max-width: 610px) {
+        text-align: left;
+      }
     }
     dd {
       font-family: 'Press Start 2P', 'Alegreya', serif;
       font-size: 1.3em;
       line-height: 1.3em;
 
-      .skill:hover {
-        animation: neon 1.5s ease-in-out infinite alternate;
+      .skill {
         cursor: pointer;
+        white-space: nowrap;
+
+        &.neon, &:hover {
+          animation: neon 1.5s ease-in-out infinite alternate;
+        }
       }
     }
   }
