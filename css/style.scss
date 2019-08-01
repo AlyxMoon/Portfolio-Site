@@ -92,6 +92,9 @@ main {
       font-size: 1.3em;
       line-height: 1.3em;
 
+      .skill.neon {
+        animation: neon 1.5s ease-in-out infinite alternate;
+      }
       .skill:hover {
         animation: neon 1.5s ease-in-out infinite alternate;
         cursor: pointer;
