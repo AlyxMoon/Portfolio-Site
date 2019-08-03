@@ -15,17 +15,25 @@ var app = new Vue({
     showSkills: false,
     timer: null
   },
-  created() {
-    this.timer = window.setInterval(() => {
-      this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
-      this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
-
-      console.log(this.activeSkill)
-    }, 3000)
-  },
 
   beforeDestroy() {
     clearInterval(this.timer)
+  },
+
+  methods: {
+    toggleShowSkills() {
+      this.showSkills = !this.showSkills
+
+      if (!this.showSkills) {
+        clearInterval(this.timer)
+        this.activeSkill = [-1, -1]
+      } else {
+        this.timer = window.setInterval(() => {
+          this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
+          this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
+        }, 3000)
+      }
+    }
   }
 })
 

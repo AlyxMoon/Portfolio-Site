@@ -51,7 +51,7 @@
 
             <div class="skills-wrapper">
               <transition name="slide-fade">
-                <button class="btn" @click="showSkills = true" v-if="showSkills === false">Yeah, what do you do?</button>
+                <button class="btn" @click="toggleShowSkills()" v-if="showSkills === false">Yeah, what do you do?</button>
               </transition>
 
               <transition name="slide-fade">
