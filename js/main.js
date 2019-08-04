@@ -8,12 +8,30 @@ var skills = {
 
 var app = new Vue({
   el: '#app',
+
   data: {
     year: (new Date()).getFullYear(),
     skills,
     activeSkill: [-1, -1],
     showSkills: false,
-    timer: null
+    timer: null,
+    projectsGithubRecent: null
+  },
+
+  filters: {
+    normalizeGithubTitle (string) {
+      if (!string) return ''
+      return string.replace(/[-]/g, ' ')
+    }
+  },
+
+  created() {
+    let params = 'affiliation=owner&sort=pushed&per_page=4'
+    fetch(`https://api.github.com/users/AlyxMoon/repos?${params}`)
+      .then(res => res.json())
+      .then(data => {
+        this.projectsGithubRecent = data
+      })
   },
 
   beforeDestroy() {
