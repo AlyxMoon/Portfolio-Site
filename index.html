@@ -51,7 +51,7 @@
 
             <div class="skills-wrapper">
               <transition name="slide-fade">
-                <button class="btn" @click="showSkills = true" v-if="showSkills === false">Yeah, what do you do?</button>
+                <button class="btn" @click="toggleShowSkills()" v-if="showSkills === false">Yeah, what do you do?</button>
               </transition>
 
               <transition name="slide-fade">
@@ -88,6 +88,36 @@
               </transition>
             </div>
           </div>
+        </div>
+
+        <div class="portfolio-wrapper">
+          <hr>
+          <h2>Recent Github Projects</h2>
+          <div class="projects-github-recent">
+            <template v-if="projectsGithubRecent && projectsGithubRecent.length > 0">
+              <div v-for="project in projectsGithubRecent" class="card">
+                <div class="card-header">
+                  <a target="_blank" :href="project.html_url">
+                    <i class="fa fa-external-link"></i>
+                    <h3 class="card-title">{{ project.name | normalizeGithubTitle }}</h3>
+                  </a>
+                </div>
+                <div class="card-body">
+                  {{ project.description }}
+                </div>
+                <div class="card-footer">
+                  <span>Last Updated {{ project.pushed_at | getTimeSince }}</span>
+                  <div>
+                    <span v-if="project.stargazers_count > 0" title="stars"><i class="fa fa-star"></i> {{ project.stargazers_count}}</span>
+                    <span v-if="project.watchers_count > 0" title="watchers"><i class="fa fa-eye"></i> {{ project.watchers_count}}</span>
+                    <span v-if="project.forks_count > 0" title="forks"><i class="fa fa-code-fork"></i> {{ project.forks_count}}</span>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <hr>
         </div>
       </div>
     </main>

@@ -8,24 +8,71 @@ var skills = {
 
 var app = new Vue({
   el: '#app',
+
   data: {
     year: (new Date()).getFullYear(),
     skills,
     activeSkill: [-1, -1],
     showSkills: false,
-    timer: null
+    timer: null,
+    projectsGithubRecent: null
   },
-  created() {
-    this.timer = window.setInterval(() => {
-      this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
-      this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
 
-      console.log(this.activeSkill)
-    }, 3000)
+  filters: {
+    normalizeGithubTitle (string) {
+      if (!string) return ''
+      return string.replace(/[-]/g, ' ')
+    },
+
+    getTimeSince (pastDateTime) {
+      if (!pastDateTime) return ''
+
+      // Time for a year, month, week, and day, in milliseconds
+      // Not exact for week to month, this assumes 7 days -> 1 week, 4 weeks -> 1 month, 12 months -> 1 year
+      let factors = [29030400000, 2419200000, 604800000, 86400000]
+      let factorNames = ['year', 'month', 'week', 'day']
+
+      let diff = Date.parse(new Date()) - Date.parse(pastDateTime)
+      let chosenFactor = factors.findIndex(f => Math.floor(diff / f) > 0)
+
+      if (chosenFactor === -1) {
+        return 'today'
+      } else {
+        let timeAgo = Math.floor(diff / factors[chosenFactor])
+        let timeFactor = factorNames[chosenFactor]
+        return `${timeAgo} ${timeFactor}${timeAgo > 1 ? 's' : ''} ago`
+      }
+
+    }
+  },
+
+  created() {
+    let params = 'affiliation=owner&sort=pushed&per_page=4'
+    fetch(`https://api.github.com/users/AlyxMoon/repos?${params}`)
+      .then(res => res.json())
+      .then(data => {
+        this.projectsGithubRecent = data
+      })
   },
 
   beforeDestroy() {
     clearInterval(this.timer)
+  },
+
+  methods: {
+    toggleShowSkills() {
+      this.showSkills = !this.showSkills
+
+      if (!this.showSkills) {
+        clearInterval(this.timer)
+        this.activeSkill = [-1, -1]
+      } else {
+        this.timer = window.setInterval(() => {
+          this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
+          this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
+        }, 3000)
+      }
+    }
   }
 })
 
