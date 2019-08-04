@@ -106,9 +106,12 @@
                   {{ project.description }}
                 </div>
                 <div class="card-footer">
-                  <span title="stars"><i class="fa fa-star"></i> {{ project.stargazers_count}}</span>
-                  <span title="watchers"><i class="fa fa-eye"></i> {{ project.watchers_count}}</span>
-                  <span title="forks"><i class="fa fa-code-fork"></i> {{ project.forks_count}}</span>
+                  <span>Last Updated {{ project.pushed_at | getTimeSince }}</span>
+                  <div>
+                    <span v-if="project.stargazers_count > 0" title="stars"><i class="fa fa-star"></i> {{ project.stargazers_count}}</span>
+                    <span v-if="project.watchers_count > 0" title="watchers"><i class="fa fa-eye"></i> {{ project.watchers_count}}</span>
+                    <span v-if="project.forks_count > 0" title="forks"><i class="fa fa-code-fork"></i> {{ project.forks_count}}</span>
+                  </div>
                 </div>
               </div>
             </template>

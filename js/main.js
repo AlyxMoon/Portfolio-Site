@@ -22,6 +22,27 @@ var app = new Vue({
     normalizeGithubTitle (string) {
       if (!string) return ''
       return string.replace(/[-]/g, ' ')
+    },
+
+    getTimeSince (pastDateTime) {
+      if (!pastDateTime) return ''
+
+      // Time for a year, month, week, and day, in milliseconds
+      // Not exact for week to month, this assumes 7 days -> 1 week, 4 weeks -> 1 month, 12 months -> 1 year
+      let factors = [29030400000, 2419200000, 604800000, 86400000]
+      let factorNames = ['year', 'month', 'week', 'day']
+
+      let diff = Date.parse(new Date()) - Date.parse(pastDateTime)
+      let chosenFactor = factors.findIndex(f => Math.floor(diff / f) > 0)
+
+      if (chosenFactor === -1) {
+        return 'today'
+      } else {
+        let timeAgo = Math.floor(diff / factors[chosenFactor])
+        let timeFactor = factorNames[chosenFactor]
+        return `${timeAgo} ${timeFactor}${timeAgo > 1 ? 's' : ''} ago`
+      }
+
     }
   },
 
