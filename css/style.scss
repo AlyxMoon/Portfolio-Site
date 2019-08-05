@@ -137,6 +137,8 @@ main {
 
     text-shadow: 1px 1px $space-color;
 
+    z-index: 3;
+
     .text-header {
       border-bottom: 1px solid white;
       margin-bottom: 0;
@@ -160,9 +162,21 @@ main {
     bottom: 5px;
     text-align: right;
 
+    z-index: 3;
+
     a {
       color: $primary-color;
     }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .star {
@@ -179,6 +193,8 @@ main {
     opacity: 0;
 
     animation: twinkle 5s ease-in-out infinite alternate;
+
+    z-index: 2;
 
     &:nth-of-type(1) {
       left: 5%;
