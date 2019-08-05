@@ -92,11 +92,49 @@
         </div>
 
         <div class="portfolio-wrapper">
-          <hr>
-          <h2>Recent Github Projects</h2>
-          <div class="projects-github-recent">
-            <template v-if="projectsGithubRecent && projectsGithubRecent.length > 0">
-              <div v-for="project in projectsGithubRecent" class="card">
+          <template v-if="projectsClient && projectsClient.length > 0">
+            <hr>
+            <h2>Client Projects</h2>
+            <div class="projects-client">
+              <div v-for="project in projectsClient" class="card style2">
+                <div class="card-visual">
+                  <div class="card-image">
+                    <img class="img-responsive" :src="project.image_link" />
+                  </div>
+                  <div class="card-links">
+                    <span title="See the live project">
+                      <a :href="project.link_website" target="_blank"><i class="fa fa-desktop"></i></a>
+                    </span>
+                    <span title="See the project code">
+                      <a :href="project.link_code" target="_blank"><i class="fa fa-code"></i></a>
+                    </span>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-header">
+                    <h3 class="card-title">{{ project.name }}</h3>
+                  </div>
+                  <div class="card-body">
+                    {{ project.description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template v-if="projectsPersonal && projectsPersonal.length > 0">
+            <hr>
+            <h2>Personal Projects</h2>
+            <div class="project-personal">
+
+            </div>
+          </template>
+
+          <template v-if="projectsGithubRecent && projectsGithubRecent.length > 0">
+            <hr>
+            <h2>Recent Github Projects</h2>
+            <div class="projects-github-recent">
+              <div v-for="project in projectsGithubRecent" class="card style1">
                 <div class="card-header">
                   <a target="_blank" :href="project.html_url">
                     <i class="fa fa-external-link"></i>
@@ -115,8 +153,8 @@
                   </div>
                 </div>
               </div>
-            </template>
-          </div>
+            </div>
+          </template>
 
           <hr>
         </div>

@@ -1,10 +1,20 @@
-var skillCategories = ['web', 'frontend', 'backend', 'other']
-var skills = {
+const skillCategories = ['web', 'frontend', 'backend', 'other']
+const skills = {
   'web': ['HTML', 'CSS', 'CSS Animations', 'JavaScript'],
   'frontend': ['JQuery', 'Bootstrap', 'Vue', 'React', 'Angular'],
   'backend': ['Node', 'Express', 'Feathers'],
   'other': ['Electron']
 }
+
+const projectsClient = [
+  {
+    name: 'Placeholder thing',
+    image_link: './img/project_placeholder.png',
+    link_code: '#',
+    link_website: '#',
+    description: 'Lorem Ipsum bla blah bla'
+  }
+]
 
 var app = new Vue({
   el: '#app',
@@ -15,7 +25,9 @@ var app = new Vue({
     activeSkill: [-1, -1],
     showSkills: false,
     timer: null,
-    projectsGithubRecent: null
+    projectsGithubRecent: null,
+    projectsClient,
+    projectsPersonal: []
   },
 
   filters: {
