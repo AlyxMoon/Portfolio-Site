@@ -8,11 +8,12 @@ const skills = {
 
 const projectsClient = [
   {
-    name: 'Placeholder thing',
+    name: 'Business Valuation Form',
     image_link: './img/project_placeholder.png',
     link_code: '',
     link_website: '',
-    description: 'Lorem Ipsum bla blah bla'
+    description: `This project was a full stack app that can be summed up as "A dynamic web form with user profiles and access control." It was intended to ease the entry and review of data provided by clients, and to export as a PDF and to Excel to fit within their existing business practice.
+    This project had an Angular frontend, a Node/Feathers backend, with a PSQL database.`
   }
 ]
 
@@ -54,7 +55,11 @@ var app = new Vue({
         let timeFactor = factorNames[chosenFactor]
         return `${timeAgo} ${timeFactor}${timeAgo > 1 ? 's' : ''} ago`
       }
+    },
 
+    trim (string) {
+      if (!string) return ''
+      return ('' + string).trim()
     }
   },
 
