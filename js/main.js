@@ -10,8 +10,8 @@ const projectsClient = [
   {
     name: 'Placeholder thing',
     image_link: './img/project_placeholder.png',
-    link_code: '#',
-    link_website: '#',
+    link_code: '',
+    link_website: '',
     description: 'Lorem Ipsum bla blah bla'
   }
 ]

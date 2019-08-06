@@ -102,12 +102,16 @@
                     <img class="img-responsive" :src="project.image_link" />
                   </div>
                   <div class="card-links">
-                    <span title="See the live project">
+                    <span v-if="project.link_website" title="See the live project">
                       <a :href="project.link_website" target="_blank"><i class="fa fa-desktop"></i></a>
                     </span>
-                    <span title="See the project code">
+                    <span v-else class="unavailable" title="A live preview is unavailable. Sorry!"><i class="fa fa-desktop"></i></span>
+
+                    <span v-if="project.link_code" title="See the project code">
                       <a :href="project.link_code" target="_blank"><i class="fa fa-code"></i></a>
                     </span>
+                    <span v-else class="unavailable" title="The code is unavailable. Sorry!"><i class="fa fa-code"></i></span>
+
                   </div>
                 </div>
                 <div class="card-content">
