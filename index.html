@@ -30,6 +30,7 @@
         <div class="img-attribution">
           Image by <a target="_blank" href="https://pixabay.com/users/rkarkowski-289667/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1859616">Robert Karkowski</a> from <a target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1859616">Pixabay</a>
         </div>
+        <div class="hero-overlay"></div>
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
@@ -91,11 +92,55 @@
         </div>
 
         <div class="portfolio-wrapper">
-          <hr>
-          <h2>Recent Github Projects</h2>
-          <div class="projects-github-recent">
-            <template v-if="projectsGithubRecent && projectsGithubRecent.length > 0">
-              <div v-for="project in projectsGithubRecent" class="card">
+          <template v-if="projectsClient && projectsClient.length > 0">
+            <hr>
+            <h2>Client Projects</h2>
+            <div class="projects-client">
+              <div v-for="project in projectsClient" class="card style2">
+                <div class="card-visual">
+                  <div class="card-image">
+                    <img class="img-responsive" :src="project.image_link" />
+                  </div>
+                  <div class="card-links">
+                    <span v-if="project.link_website" title="See the live project">
+                      <a :href="project.link_website" target="_blank"><i class="fa fa-desktop"></i></a>
+                    </span>
+                    <span v-else class="unavailable" title="A live preview is unavailable. Sorry!"><i class="fa fa-desktop"></i></span>
+
+                    <span v-if="project.link_code" title="See the project code">
+                      <a :href="project.link_code" target="_blank"><i class="fa fa-code"></i></a>
+                    </span>
+                    <span v-else class="unavailable" title="The code is unavailable. Sorry!"><i class="fa fa-code"></i></span>
+
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-header">
+                    <h3 class="card-title">{{ project.name }}</h3>
+                  </div>
+                  <div class="card-body">
+                    <pre>
+                      {{ project.description | trim }}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template v-if="projectsPersonal && projectsPersonal.length > 0">
+            <hr>
+            <h2>Personal Projects</h2>
+            <div class="project-personal">
+
+            </div>
+          </template>
+
+          <template v-if="projectsGithubRecent && projectsGithubRecent.length > 0">
+            <hr>
+            <h2>Recent Github Projects</h2>
+            <div class="projects-github-recent">
+              <div v-for="project in projectsGithubRecent" class="card style1">
                 <div class="card-header">
                   <a target="_blank" :href="project.html_url">
                     <i class="fa fa-external-link"></i>
@@ -114,8 +159,8 @@
                   </div>
                 </div>
               </div>
-            </template>
-          </div>
+            </div>
+          </template>
 
           <hr>
         </div>

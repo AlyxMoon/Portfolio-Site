@@ -1,10 +1,21 @@
-var skillCategories = ['web', 'frontend', 'backend', 'other']
-var skills = {
+const skillCategories = ['web', 'frontend', 'backend', 'other']
+const skills = {
   'web': ['HTML', 'CSS', 'CSS Animations', 'JavaScript'],
   'frontend': ['JQuery', 'Bootstrap', 'Vue', 'React', 'Angular'],
   'backend': ['Node', 'Express', 'Feathers'],
   'other': ['Electron']
 }
+
+const projectsClient = [
+  {
+    name: 'Business Valuation Form',
+    image_link: './img/project_placeholder.png',
+    link_code: '',
+    link_website: '',
+    description: `This project was a full stack app that can be summed up as "A dynamic web form with user profiles and access control." It was intended to ease the entry and review of data provided by clients, and to export as a PDF and to Excel to fit within their existing business practice.
+    This project had an Angular frontend, a Node/Feathers backend, with a PSQL database.`
+  }
+]
 
 var app = new Vue({
   el: '#app',
@@ -15,7 +26,9 @@ var app = new Vue({
     activeSkill: [-1, -1],
     showSkills: false,
     timer: null,
-    projectsGithubRecent: null
+    projectsGithubRecent: null,
+    projectsClient,
+    projectsPersonal: []
   },
 
   filters: {
@@ -42,7 +55,11 @@ var app = new Vue({
         let timeFactor = factorNames[chosenFactor]
         return `${timeAgo} ${timeFactor}${timeAgo > 1 ? 's' : ''} ago`
       }
+    },
 
+    trim (string) {
+      if (!string) return ''
+      return ('' + string).trim()
     }
   },
 
