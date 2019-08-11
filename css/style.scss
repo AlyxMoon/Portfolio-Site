@@ -376,33 +376,6 @@ main {
         min-width: 200px;
       }
     }
-
-    .card-links {
-      color: #444;
-
-      display: flex;
-      align-items: flex-end;
-
-      min-height: 30px;
-      padding-left: 1rem;
-
-      .unavailable {
-        color: #DC3545;
-      }
-
-      span {
-        margin-right: 10px;
-      }
-
-      a {
-        color: #444;
-        text-decoration: none;
-
-        &:hover {
-          color: $primary-color;
-        }
-      }
-    }
   }
 
   .card-content {
@@ -420,6 +393,37 @@ main {
 
     .card-body {
       white-space: pre-line;
+    }
+  }
+}
+
+.card {
+  .card-footer, .card-visual {
+    .card-links {
+      color: #444;
+
+      display: flex;
+      align-items: flex-end;
+
+      min-height: 30px;
+      padding-left: 1rem;
+
+      .unavailable {
+        color: #DC3545;
+      }
+
+      span {
+        margin-right: 15px;
+      }
+
+      a {
+        color: #444;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
     }
   }
 }

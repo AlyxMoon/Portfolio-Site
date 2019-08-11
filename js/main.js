@@ -69,6 +69,7 @@ var app = new Vue({
       .then(res => res.json())
       .then(data => {
         this.projectsGithubRecent = data
+        console.log(data)
       })
   },
 
