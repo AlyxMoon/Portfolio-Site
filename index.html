@@ -148,10 +148,22 @@
                   </a>
                 </div>
                 <div class="card-body">
-                  {{ project.description }}
+                  <span>{{ project.description }}</span>
                 </div>
                 <div class="card-footer">
-                  <span>Last Updated {{ project.pushed_at | getTimeSince }}</span>
+                  <div class="card-links">
+                    <span v-if="project.homepage" title="See the live project">
+                      <a :href="project.homepage" target="_blank"><i class="fa fa-desktop"></i></a>
+                    </span>
+                    <span v-else class="unavailable" title="A live preview is unavailable. Sorry!"><i class="fa fa-desktop"></i></span>
+
+                    <span title="See the project code">
+                      <a :href="project.html_url" target="_blank"><i class="fa fa-code"></i></a>
+                    </span>
+
+                    <span>Last Updated {{ project.pushed_at | getTimeSince }}</span>
+                  </div>
+
                   <div>
                     <span v-if="project.stargazers_count > 0" title="stars"><i class="fa fa-star"></i> {{ project.stargazers_count}}</span>
                     <span v-if="project.watchers_count > 0" title="watchers"><i class="fa fa-eye"></i> {{ project.watchers_count}}</span>
