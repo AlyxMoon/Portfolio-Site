@@ -359,6 +359,10 @@ main {
 
   padding: 10px 1rem;
 
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
   .card-visual {
     display: flex;
     flex-direction: column;
