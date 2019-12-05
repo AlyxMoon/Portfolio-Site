@@ -51,42 +51,60 @@
             <p>I like to write software, build websites, and make money. And so I offer my freelancing services to you. But what do I do, you ask? </p>
 
             <div class="skills-wrapper">
-              <transition name="slide-fade">
-                <button class="btn" @click="toggleShowSkills()" v-if="showSkills === false">Yeah, what do you do?</button>
-              </transition>
-
-              <transition name="slide-fade">
-                <dl v-if="showSkills === true">
-                  <dt>The web essentials:</dt>
+                <dl>
+                  <dt>The web essentials</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.web">
-                      <span :class="['skill', { neon: (activeSkill[0] === 0 && activeSkill[1] === index) }]">{{ skill }}</span>
-                      <span v-if='index < skills.web.length - 1'>, </span>
+                      <div>
+                        <span
+                          @mouseover="skillHover(true)" @mouseleave="skillHover(false)"
+                          :class="['skill', { neon: (activeSkill[0] === 0 && activeSkill[1] === index) }]">
+                          {{ skill }}{{ index < skills.web.length - 1 ? ',' : '' }}
+                        </span>
+                      </div>
                     </template>
                   </dd>
-                  <dt>Frontend libraries and frameworks:</dt>
+                  <div class="row-divider"></div>
+                  <dt>Frontend libraries and frameworks</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.frontend">
-                      <span :class="['skill', { neon: (activeSkill[0] === 1 && activeSkill[1] === index) }]">{{ skill }}</span>
-                      <span v-if='index < skills.frontend.length - 1'>, </span>
+                      <div>
+                        <span
+                          @mouseover="skillHover(true)" @mouseleave="skillHover(false)"
+                          :class="['skill', { neon: (activeSkill[0] === 1 && activeSkill[1] === index) }]">
+                          {{ skill }}{{ index < skills.frontend.length - 1 ? ',' : '' }}
+                        </span>
+                      </div>
+
                     </template>
                   </dd>
-                  <dt>Backend libraries and frameworks:</dt>
+                  <div class="row-divider"></div>
+                  <dt>Backend libraries and frameworks</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.backend">
-                      <span :class="['skill', { neon: (activeSkill[0] === 2 && activeSkill[1] === index) }]">{{ skill }}</span>
-                      <span v-if='index < skills.backend.length - 1'>, </span>
+                      <div>
+                        <span
+                          @mouseover="skillHover(true)" @mouseleave="skillHover(false)"
+                          :class="['skill', { neon: (activeSkill[0] === 2 && activeSkill[1] === index) }]">
+                          {{ skill }}{{ index < skills.backend.length - 1 ? ',' : '' }}
+                        </span>
+                      </div>
                     </template>
                   </dd>
-                  <dt>Other fun stuff:</dt>
+                  <div class="row-divider"></div>
+                  <dt>Other fun stuff</dt>
                   <dd>
                     <template v-for="(skill, index) in skills.other">
-                      <span :class="['skill', { neon: (activeSkill[0] === 3 && activeSkill[1] === index) }]">{{ skill }}</span>
-                      <span v-if='index < skills.other.length - 1'>, </span>
+                      <div>
+                        <span
+                          @mouseover="skillHover(true)" @mouseleave="skillHover(false)"
+                          :class="['skill', { neon: (activeSkill[0] === 3 && activeSkill[1] === index) }]">
+                          {{ skill }}{{ index < skills.other.length - 1 ? ',' : '' }}
+                        </span>
+                      </div>
                     </template>
                   </dd>
                 </dl>
-              </transition>
             </div>
           </div>
         </div>

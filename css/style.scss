@@ -31,6 +31,7 @@ $text-color-dark: #222;
 // CH02 - Typography
 //-----------------------------------------------
 body {
+  background-color: #111;
   font-family: 'Alegreya', serif;
   color: $text-color-light;
 }
@@ -54,6 +55,7 @@ main {
 
   padding: 20px 5%;
   width: 90%;
+  overflow-x: scroll;
 }
 
 .about-me-wrapper {
@@ -76,11 +78,7 @@ main {
 
   font-size: 20px;
 
-  max-width: 100%;
-  overflow: hidden;
-
   dl {
-
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
@@ -92,13 +90,25 @@ main {
       grid-template-columns: 1fr;
     }
 
+    .row-divider {
+      grid-column: 1 / -1;
+      background-color: $secondary-color;
+      margin: 0 auto;
+      width: 30%;
+      height: 1px;
+    }
+
     dt {
-      font-weight: bold;
-      text-align: right;
-      text-decoration: underline;
+      font-size: 1.3em;
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       @media (max-width: 610px) {
-        text-align: left;
+        text-align: center;
+        font-size: 0.9em;
       }
     }
     dd {
@@ -106,12 +116,28 @@ main {
       font-size: 1.3em;
       line-height: 1.3em;
 
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (max-width: 610px) {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 0.8em;
+        line-height: 1.5em;
+      }
+
       .skill {
         cursor: pointer;
         white-space: nowrap;
 
-        &.neon, &:hover {
-          animation: neon 1.5s ease-in-out infinite alternate;
+        &.neon {
+          animation: neonAuto 1.5s ease-in-out infinite alternate;
+        }
+
+        &:hover {
+          animation: neonHover 1.5s ease-in-out infinite alternate;
         }
       }
     }
@@ -523,7 +549,7 @@ footer {
   }
 }
 
-@keyframes neon {
+@keyframes neonAuto {
   from {
     text-shadow:  0 0 1px #fff,
                   0 0 2px #fff,
@@ -543,6 +569,29 @@ footer {
                   0 0 4px $primary-color,
                   0 0 5px $primary-color,
                   0 0 7px $primary-color;
+  }
+}
+
+@keyframes neonHover {
+  from {
+    text-shadow:  0 0 1px #fff,
+                  0 0 2px #fff,
+                  0 0 3px #fff,
+                  0 0 4px $secondary-color,
+                  0 0 7px $secondary-color,
+                  0 0 8px $secondary-color,
+                  0 0 10px $secondary-color,
+                  0 0 15px $secondary-color;
+  }
+  to {
+    text-shadow:  0 0 0.5px #fff,
+                  0 0 1px #fff,
+                  0 0 1.5px #fff,
+                  0 0 2px $secondary-color,
+                  0 0 3px $secondary-color,
+                  0 0 4px $secondary-color,
+                  0 0 5px $secondary-color,
+                  0 0 7px $secondary-color;
   }
 }
 

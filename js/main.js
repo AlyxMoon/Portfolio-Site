@@ -24,7 +24,7 @@ var app = new Vue({
     year: (new Date()).getFullYear(),
     skills,
     activeSkill: [-1, -1],
-    showSkills: false,
+    skillBeingHovered: false,
     timer: null,
     projectsGithubRecent: null,
     projectsClient,
@@ -70,6 +70,8 @@ var app = new Vue({
       .then(data => {
         this.projectsGithubRecent = data
       })
+
+    this.timer = window.setInterval(this.assignActiveSkill, 3000)
   },
 
   beforeDestroy() {
@@ -77,17 +79,17 @@ var app = new Vue({
   },
 
   methods: {
-    toggleShowSkills() {
-      this.showSkills = !this.showSkills
+    skillHover (skillBeingHovered) {
+      this.skillBeingHovered = skillBeingHovered
+      this.assignActiveSkill()
+    },
 
-      if (!this.showSkills) {
-        clearInterval(this.timer)
-        this.activeSkill = [-1, -1]
+    assignActiveSkill () {
+      if (!this.skillBeingHovered) {
+        this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
+        this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
       } else {
-        this.timer = window.setInterval(() => {
-          this.activeSkill.splice(0, 1, Math.floor(Math.random() * skillCategories.length))
-          this.activeSkill.splice(1, 1, Math.floor(Math.random() * skills[skillCategories[this.activeSkill[0]]].length))
-        }, 3000)
+        this.activeSkill = [-1, -1]
       }
     }
   }
