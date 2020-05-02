@@ -16,10 +16,10 @@ $breakpoint-md: 48em;
 $breakpoint-lg: 64em;
 $breakpoint-xl: 80em;
 
-$space-color: #01304A;
+$space-color: #0E1C2A;
 $primary-color: #3FB0AC;
 $secondary-color: #FFA45B;
-$back-color: #191E28;
+$back-color: #111;
 $back-color-secondary: rgba(0,0,0,0.8);
 
 $text-color-light: #E6E6E6;
@@ -27,11 +27,14 @@ $text-color-dark: #222;
 
 // CH01 - Resets
 //-----------------------------------------------
+* {
+  box-sizing: border-box;
+}
 
 // CH02 - Typography
 //-----------------------------------------------
 body {
-  background-color: #111;
+  background-color: $back-color;
   font-family: 'Alegreya', serif;
   color: $text-color-light;
 }
@@ -41,7 +44,6 @@ pre {
   white-space: pre-line;
 }
 
-
 // CH03 - Page Structure
 //-----------------------------------------------
 main {
@@ -49,12 +51,26 @@ main {
 }
 
 .content {
-  background-color: #111;
-  border-top: 1px solid $primary-color;
+  background-color: $back-color;
   border-bottom: 1px solid $primary-color;
 
+  position: relative;
   padding: 20px 5%;
-  width: 90%;
+  width: 100%;
+
+  &:before {
+    content: '';
+    background-color: $primary-color;
+
+    height: 3px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    animation: neonBorder 2s ease-in-out infinite alternate;
+  }
 }
 
 .about-me-wrapper {
@@ -146,67 +162,78 @@ main {
 // CH04 - Header & Navigation
 //-----------------------------------------------
 .hero-wrapper {
-  height: 400px;
-  width: 97%;
+  height: 600px;
+  width: 100%;
+  padding-left: 3%;
   overflow: hidden;
 
   position: relative;
   display: flex;
   align-items: center;
 
-  padding-left: 3%;
-
-  background: url('../img/moon_blue (Robert Karkowski, Pixabay).png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
   .hero-text {
-    min-width: 30%;
-    margin-top: -7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
+    min-width: 40%;
+    margin-top: -15em;
+
+    color: $text-color-light;
     text-shadow: 1px 1px $space-color;
 
     z-index: 3;
 
     .text-header {
-      border-bottom: 1px solid white;
       margin-bottom: 0;
       padding-left: 10px;
 
-      font-size: 3em;
+      font-size: 4em;
     }
 
     .text-sub {
       margin-top: 10px;
       padding-left: 20px;
 
-      font-size: 1.5em;
+      font-size: 2em;
     }
   }
 
-  .img-attribution {
-    position: absolute;
-    font-size: 10px;
-    right: 10px;
-    bottom: 5px;
-    text-align: right;
-
-    z-index: 3;
-
-    a {
-      color: $primary-color;
-    }
-  }
-
-  .hero-overlay {
+  .hero-background-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    div:nth-child(1) {
+      background-color: #002322;
+      box-shadow: 0 0 40px 5px $space-color;
+
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      right: 55%;
+
+      transform: skewX(-20deg);
+    }
+
+    div:nth-child(2) {
+      background-image: url('../img/background-moon.jpg');
+      background-position: center;
+      background-size: cover;
+      opacity: 0.8;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10%;
+      right: 0;
+
+      z-index: 1;
+    }
   }
 
   .star {
@@ -288,8 +315,11 @@ main {
 
 .projects-client {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+  grid-column-gap: 10px;
+  grid-row-gap: 40px;
 
   margin: auto;
   width: 80%;
@@ -384,10 +414,6 @@ main {
 
   padding: 10px 1rem;
 
-  @media (max-width: 850px) {
-    flex-direction: column;
-  }
-
   .card-visual {
     display: flex;
     flex-direction: column;
@@ -409,6 +435,8 @@ main {
 
   .card-content {
     flex-grow: 1;
+    flex-shrink: 0;
+    width: 60%;
 
     .card-header {
       border-bottom: 1px solid $primary-color;
@@ -424,9 +452,33 @@ main {
       white-space: pre-line;
     }
   }
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+
+    .card-visual .card-image {
+      align-self: flex-start;
+    }
+
+    .card-content {
+      width: 100%;
+    }
+  }
 }
 
 .card {
+
+  .card-header {
+    a {
+      text-decoration: none;
+      color: $text-color-dark;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
   .card-footer, .card-visual {
     .card-links {
       color: #444;
@@ -493,7 +545,7 @@ main {
 // CH06 - Footer
 //-----------------------------------------------
 footer {
-  background-color: #111;
+  background-color: $back-color;
   padding: 1em 0;
 
   display: flex;
@@ -517,7 +569,7 @@ footer {
       align-items: center;
       justify-content: center;
 
-      color: #111;
+      color: $back-color;
       text-decoration: none;
       font-size: 1.3em;
 
@@ -532,6 +584,16 @@ footer {
         color: $primary-color;
         background-color: #222;
       }
+    }
+  }
+
+  .img-attribution {
+    align-self: flex-end;
+    padding: 0 10px;
+
+    font-size: 12px;
+    a {
+      color: $primary-color;
     }
   }
 }
@@ -591,6 +653,29 @@ footer {
                   0 0 4px $secondary-color,
                   0 0 5px $secondary-color,
                   0 0 7px $secondary-color;
+  }
+}
+
+@keyframes neonBorder {
+  from {
+    box-shadow:  0 0 1px #fff,
+                  0 0 2px #fff,
+                  0 0 3px #fff,
+                  0 0 4px $primary-color,
+                  0 0 7px $primary-color,
+                  0 0 8px $primary-color,
+                  0 0 10px $primary-color,
+                  0 0 15px $primary-color;
+  }
+  to {
+    box-shadow:  0 0 0.5px #fff,
+                  0 0 1px #fff,
+                  0 0 1.5px #fff,
+                  0 0 2px $primary-color,
+                  0 0 3px $primary-color,
+                  0 0 4px $primary-color,
+                  0 0 5px $primary-color,
+                  0 0 7px $primary-color;
   }
 }
 

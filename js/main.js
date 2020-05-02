@@ -8,6 +8,14 @@ const skills = {
 
 const projectsClient = [
   {
+    name: 'Lending Well',
+    image_link: './img/project_placeholder.png',
+    link_code: '',
+    link_website: 'https://www.lending-well.com/',
+    description: `A full stack application designed to help match businesses with lenders.
+    This project has a Vue frontend, with a Node/Express backend and PostgreSQL database.`
+  },
+  {
     name: 'Business Valuation Form',
     image_link: './img/project_placeholder.png',
     link_code: '',
@@ -63,7 +71,7 @@ var app = new Vue({
     }
   },
 
-  created() {
+  created () {
     let params = 'affiliation=owner&sort=pushed&per_page=4'
     fetch(`https://api.github.com/users/AlyxMoon/repos?${params}`)
       .then(res => res.json())

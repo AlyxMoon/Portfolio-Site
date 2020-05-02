@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='x-ua-compatible' content='ie=edge'>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Allister Moon</title>
-  <meta name='description' content='A portfolio by Allister Moon. Programmer, web developer, freelancer.'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name="description" content="A portfolio by Allister Moon. Programmer, web developer, freelancer.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png'>
-  <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
-  <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png'>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
   <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/pure-min.css' integrity='sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w' crossorigin='anonymous'>
-  <link rel='stylesheet' href='https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css'>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/178807a833.css">
-  <link rel='stylesheet' href='css/style.css'>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id='app'>
+  <div id="app">
     <main>
       <div class="hero-wrapper">
         <div class="hero-text">
           <h1 class="text-header">Allister Moon</h1>
           <h4 class="text-sub">Software and Web Developer</h4>
         </div>
-        <div class="img-attribution">
-          Image by <a target="_blank" href="https://pixabay.com/users/rkarkowski-289667/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1859616">Robert Karkowski</a> from <a target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1859616">Pixabay</a>
+        <div class="hero-background-wrapper">
+          <div></div>
+          <div></div>
         </div>
-        <div class="hero-overlay"></div>
+
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
@@ -38,18 +39,10 @@
         <span class="star"></span>
         <span class="star"></span>
       </div>
+
       <div class="content">
         <div class="about-me-wrapper">
-          <div class="portrait">
-            <img class="img-responsive" src="./img/selfie.png" />
-          </div>
           <div class="about-me-text">
-            <h3>Hello there! My name is <span class="highlight">Allister Moon</span>.</h3>
-            <p>
-              I'm a simple and relaxed guy; I pride myself on being straightforward and pleasant to work with.
-            </p>
-            <p>I like to write software, build websites, and make money. And so I offer my freelancing services to you. But what do I do, you ask? </p>
-
             <div class="skills-wrapper">
                 <dl>
                   <dt>The web essentials</dt>
@@ -134,7 +127,11 @@
                 </div>
                 <div class="card-content">
                   <div class="card-header">
-                    <h3 class="card-title">{{ project.name }}</h3>
+                    <a v-if="project.link_website" target="_blank" :href="project.link_website">
+                      <i class="fa fa-external-link"></i>
+                      <h3 class="card-title">{{ project.name }}</h3>
+                    </a>
+                    <h3 v-else class="card-title">{{ project.name }}</h3>
                   </div>
                   <div class="card-body">
                     <pre>
@@ -197,13 +194,9 @@
       </div>
     </main>
     <footer>
-      <p>Email: allisterkmoon@gmail.com</p>
       <div class="social-wrapper">
         <a href='https://github.com/AlyxMoon' target='_blank' title="Github">
           <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a href='mailto:allisterkmoon@gmail.com' target='_blank' title="Email">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
         </a>
         <a href='https://twitter.com/AlyxDeLunar' target='_blank' title="Twitter">
           <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -217,11 +210,15 @@
       </div>
 
       <div class='trademark'>&copy; {{ year }} Allister Moon</div>
+
+      <div class="img-attribution">
+        Hero image by <a href="https://pixabay.com/users/cocoparisienne-127419/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4919501">Anja</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4919501">Pixabay</a>
+      </div>
     </footer>
   </div>
 
-  <script src='https://unpkg.com/vue@2.6.10/dist/vue.min.js'></script>
-  <script src='js/main.js'></script>
+  <script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js"></script>
+  <script src="js/main.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
