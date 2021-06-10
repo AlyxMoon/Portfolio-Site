@@ -35,12 +35,12 @@ $text-color-dark: #222;
 //-----------------------------------------------
 body {
   background-color: $back-color;
-  font-family: 'Alegreya', serif;
+  font-family: 'Merriweather', serif;
   color: $text-color-light;
 }
 
 pre {
-  font-family: 'Alegreya', serif;
+  font-family: 'Merriweather', serif;
   white-space: pre-line;
 }
 
@@ -127,7 +127,7 @@ main {
       }
     }
     dd {
-      font-family: 'Press Start 2P', 'Alegreya', serif;
+      font-family: 'Press Start 2P', 'Merriweather', serif;
       font-size: 1.3em;
       line-height: 1.3em;
 
